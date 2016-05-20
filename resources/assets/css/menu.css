@@ -1,0 +1,121 @@
+/*menu*/
+.header {
+    position: fixed;
+    background: rgba(26,20,20,0.9);
+    z-index: 9999999 !important;
+    top: 40px;
+    left: 40px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+#nav-btn {
+    position: absolute;
+    right: -63px;
+    background: rgba(26,20,20,0.9);
+    width: 60px;
+    height: 60px;
+    top: 0;
+    cursor: pointer;
+}
+
+#nav-btn>i {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+}
+
+.livicon {
+    display: inline-block;
+    line-height: inherit;
+    vertical-align: middle;
+    height: 18px !important;
+}
+
+#nav-btn>div{
+    display:none;
+    position:absolute;
+    top:48px;
+}
+
+#nav-btn ul {
+    list-style-type: none;
+    padding: 5px;
+    background: rgba(26,20,20,0.8);
+    width: 200px;
+}
+
+#nav-btn ul li {
+    margin-bottom: 1px;
+    line-height: 45px;
+    display: block;
+}
+
+#nav-btn ul li a {
+    display: block;
+    background: url(../../../public/img/nav-li.png) 170px 17px no-repeat rgba(236,229,224,0.05);
+    color: #ece5e0;
+    padding-left: 5px;
+    font-size: large;
+}
+
+#nav-btn ul li ul.sub-menu{
+    width:100%;
+    display:none
+}
+
+#nav-btn ul li:hover ul.sub-menu{display:block}
+
+#nav-btn:hover>div{display:block}
+
+#nav-btn ul li{
+    margin-bottom:1px;
+    line-height:45px;
+    display:block
+}
+
+#nav-btn ul:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 2px;
+    right: 0;
+}
+
+#nav-btn ul li a:hover {
+    color: #3498db;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+html|* > svg {
+    transform-origin: 50% 50% 0px;
+}
+/*fin*/
