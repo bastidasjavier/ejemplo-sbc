@@ -112,14 +112,6 @@ ul, menu, dir {
     -webkit-padding-start: 40px;
 }
 
-svg:not(:root) {
-    overflow: hidden;
-}
-
-html|* > svg {
-    transform-origin: 50% 50% 0px;
-}
-
 /*Media Query Menu*/
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -142,11 +134,11 @@ html|* > svg {
 }
 
 #nav-btn>div {
-    top: 105px;
+    top: 110px;
 }
 
 #nav-btn ul {
-    width: 900px;
+    width: 880px;
 }
 
 #nav-btn ul li {
@@ -184,11 +176,11 @@ html|* > svg {
 }
 
 #nav-btn>div {
-    top: 105px;
+    top: 110px;
 }
 
 #nav-btn ul {
-    width: 900px;
+    width: 880px;
 }
 
 #nav-btn ul li {
