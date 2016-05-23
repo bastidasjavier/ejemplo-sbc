@@ -24,8 +24,9 @@
 
 #nav-btn>i {
     position: absolute;
-    top: 14px;
-    left: 15px;
+    top: 9px;
+    left: 12.5px;
+    color: #3498DB;
 }
 
 .livicon {
@@ -118,4 +119,79 @@ svg:not(:root) {
 html|* > svg {
     transform-origin: 50% 50% 0px;
 }
+
+/*Media Query Menu*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){ 
+
+#nav-btn {
+    left: 10px;
+    width: 120px;
+    height: 120px;
+}
+#nav-btn>i {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    color: #3498DB;
+}
+
+.fa-3x {
+    font-size: 5em;
+}
+
+#nav-btn>div {
+    top: 105px;
+}
+
+#nav-btn ul {
+    width: 400px;
+}
+
+#nav-btn ul li {
+    line-height: 55px;
+}
+
+#nav-btn ul li a {
+    font-size: 35px;
+}
+
+}
+
+/* Tablet (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) { 
+
+#nav-btn {
+    left: 10px;
+    width: 120px;
+    height: 120px;
+}
+#nav-btn>i {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    color: #3498DB;
+}
+
+.fa-3x {
+    font-size: 5em;
+}
+
+#nav-btn>div {
+    top: 105px;
+}
+
+#nav-btn ul {
+    width: 400px;
+}
+
+#nav-btn ul li {
+    line-height: 55px;
+}
+
+#nav-btn ul li a {
+    font-size: 35px;
+}
+} 
 /*fin*/
