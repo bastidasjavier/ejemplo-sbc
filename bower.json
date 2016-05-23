@@ -1,0 +1,25 @@
+{
+  "name": "dnc",
+  "description": "dnc",
+  "main": "index.js",
+  "authors": [
+    "Carlos David Bullones Jimenez <carlos.bullones@ngncloud.net>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "bootstrap-sass": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "normalize-css": "^4.1.1",
+    "owl.carousel": "^2.1.3"
+  }
+}
