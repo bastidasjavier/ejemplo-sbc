@@ -99,7 +99,9 @@ ul, ol {
 
 li {
     display: list-item;
-    text-align: -webkit-match-parent;
+    text-align: 
+    -webkit-match-parent;
+    -moz-match-parent;
 }
 
 ul, menu, dir {
@@ -110,6 +112,11 @@ ul, menu, dir {
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     -webkit-padding-start: 40px;
+
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    -moz-padding-start: 40px;
+   
 }
 
 /*Media Query Menu*/
