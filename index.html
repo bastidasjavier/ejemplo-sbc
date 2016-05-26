@@ -13,6 +13,7 @@
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- owl-->
     <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.carousel.min.css">
+    <!-- Personal styles -->
     <link rel="stylesheet" type="text/css" href="resources/assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="resources/assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="resources/assets/css/menu.css">
@@ -20,33 +21,35 @@
 <body>
 <!--menu-->
 <div class="header"> 
-  <div id="nav">
-      <div id="nav-btn"><i class="fa fa-bars fa-3x" aria-hidden="true"></i>
-        <div>
-            <ul id="menu-header-menu">
-                <li>
-                    <a class="button-menu" data-scroll href="#services">Nuestros Servicios</a>
-                </li>
-                <li>
-                    <a class="button-menu" data-scroll href="#projects">Nuestros Proyectos</a>
-                </li>
-                <li>
-                    <a class="button-menu" data-scroll href="#clients">Nuestros Clientes</a>
-                </li>
-                <li>
-                    <a class="button-menu" data-scroll href="#team">Nuestro Equipo</a>
-                </li>
-                <li>
-                    <a class="button-menu" data-scroll href="#about">Sobre Nosotros</a>
-                </li>
-                <li>
-                    <a class="button-menu" data-scroll href="#contact">Contactanos</a>
-                </li>
-            </ul>
-        </div>
-      </div>
-  </div>
+  <button id="btn-hamburger" class="c-hamburger c-hamburger--htx">
+      <span></span>
+  </button>
 </div>
+<nav id="nav-menu" class="menu-collapsed">
+    <ul>
+      <li>
+        <a class="nav-btn" data-scroll href="#home">Home</a>
+      </li>
+      <li>
+        <a class="nav-btn" data-scroll href="#services">Nuestros Servicios</a>
+      </li>
+      <li>
+        <a class="nav-btn" data-scroll href="#projects">Nuestros Proyectos</a>
+      </li>
+      <li>
+        <a class="nav-btn" data-scroll href="#clients">Nuestros Clientes</a>
+      </li>
+      <li>
+        <a class="nav-btn" data-scroll href="#team">Nuestro Equipo</a>
+      </li>
+      <li>
+        <a class="nav-btn" data-scroll href="#about">Sobre Nosotros</a>
+      </li>
+      <li >
+        <a class="nav-btn" data-scroll href="#contact">Contactanos</a>
+      </li>
+    </ul>
+</nav>  
 
 <!--Slide-->
 <div class="carousel fade-carousel slide slide-new" data-ride="carousel" data-interval="2000" id="bs-carousel">
@@ -61,7 +64,7 @@
   </ol>
   
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
+  <div class="carousel-inner" id="home">
     <div class="item slides active">
       
       <div class="hero">
@@ -495,49 +498,48 @@
   <div class="container">
     <div class="row">
       <div class="contact_section">
-                    <div class="col-md-6">
-                        <div class="contact_form">
-                        <fieldset id="contact_form">
-                            <div id="result"></div>
-                                <label for="name">
-                                <input type="text" name="name" id="name" placeholder="Enter Your Name" />
-                                </label>
-                                
-                                <label for="email">
-                                <input type="email" name="email" id="email" placeholder="Enter Your Email" />
-                                </label>
-
-                                <label for="message">
-                                <textarea name="message" id="message" placeholder="Enter Your Name"></textarea>
-                                </label>
-                                <button type="button" class="btn btn-info btn-lg" id="submit_btn">Submit</button>
-                                </label>
-                        </fieldset>                           
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        
-                        <div class="contact_text">
-                            <div>
-                            <i class="fa fa-map-marker fa-3x"></i>
-                            <p class="tipografia-contact">Carrera 13 on calle 43, Barquisimeto Edo Lara, Venezuela.</p>
-                            </div>
-                            <div>
-                            <i class="fa fa-envelope-o fa-3x"></i>
-                            <p class="tipografia-contact">info@dnc.com</p>
-                            </div>
-                            <div>
-                            <i class="fa fa-phone fa-3x"></i>
-                            <p class="tipografia-contact">0251 2377993</p>
-                            </div>
-                            <h3>follow us</h3>
-                            <ul class="social social-circle">
-              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-            </ul>                
-                        </div>
-                    </div>
+        <div class="col-md-6">
+          <div class="contact_form">
+            <fieldset id="contact_form">
+              <div id="result"></div>
+                <label for="name">
+                  <input type="text" name="name" id="name" placeholder="Enter Your Name" />
+                </label>
+                <label for="email">
+                  <input type="email" name="email" id="email" placeholder="Enter Your Email" />
+                </label>
+                <label for="message">
+                  <textarea name="message" id="message" placeholder="Enter Your Name"></textarea>
+                </label>
+                  <button type="button" class="btn btn-info btn-lg" id="submit_btn">Submit</button>
+                </label>
+            </fieldset>                           
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="contact_text">
+            <div>
+              <i class="fa fa-map-marker fa-3x"></i>
+              <p class="tipografia-contact">Carrera 13 on calle 43, Barquisimeto Edo Lara, Venezuela.</p>
+            </div>
+            <div>
+              <i class="fa fa-envelope-o fa-3x"></i>
+              <p class="tipografia-contact">info@dnc.com</p>
+            </div>
+            <div>
+              <i class="fa fa-phone fa-3x"></i>
+              <p class="tipografia-contact">0251 2377993</p>
+            </div>
+            <div>
+              <h3>Siguenos</h3>
+              <ul class="social social-circle">
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              </ul>   
+            </div>             
+          </div>
+        </div>
       </div>
     </div>
   </div> 
@@ -550,7 +552,6 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="resources/assets/js/scrollupto.js"></script>
     <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
-    <script src="bower_components/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
     <script src="resources/assets/js/app.js"></script>
     
 </body>

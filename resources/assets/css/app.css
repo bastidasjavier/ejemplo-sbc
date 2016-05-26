@@ -56,11 +56,6 @@ a:hover{
   outline:none;
 }
 
-
-
-
-
-
 /*============== Scroll up to  ==============*/
 
 .row {
@@ -84,11 +79,7 @@ a:hover{
   background: #333; 
 }
 
-
-
 /*
-Fade content bs-carousel with hero headers
-Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
 Image credits: unsplash.com
 */
 
@@ -235,227 +226,6 @@ Image credits: unsplash.com
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
 }
-.main_header {
-  position: fixed;
-  top: 0px;
-  max-height: 70px;
-  z-index: 999;
-  width: 100%;
-  background: none;
-  overflow: hidden;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  opacity: 0;
-  top: -100px;
-  padding-bottom: 6px;
-}
-
-
-@media only screen and (min-width : 320px) {
-        
-}
-
-/* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
-
-}
-
-
-@media only screen and (max-width : 600px) {
-  .cd-headline b{
-
- 
-  }
-}
-
-.open-nav { max-height: 400px !important; }
-
-.open-nav .mobile-toggle {
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-}
-
-.sticky {
-  background-color: rgba(255, 255, 255, 0.93);
-  opacity: 1;
-  top: 0px;
-  border-bottom: 1px solid silver;
-}
-
-.logo {
-  padding-top: 17px;    
-  width: 50px;
-  font-size: 25px;
-  color: #3498db;
-  text-transform: uppercase;
-  float: left;
-  display: block;
-  margin-top: 0;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.main_menu li a:focus{
-  outline: none;
-}
-
-
-.main_menu li a:active{
-  text-decoration: none;
-}
-
-@media only screen and (max-width: 766px) {
-
-.logo{
-  padding-top: 0;
-}
-
-.main_header { padding-top: 25px; }
-
-}
-
-
-
-@media only screen and (max-width: 766px) {
-
-.logo { float: none; }
-}
-
-nav {
-  float: right;
-  width: 60%;
-}
-@media only screen and (max-width: 766px) {
-
-nav { width: 100%; }
-}
-
-nav ul {
-  list-style: none;
-  overflow: hidden;
-  text-align: right;
-  float: right;
-}
-@media only screen and (max-width: 766px) {
-
-nav ul {
-  padding-top: 10px;
-  margin-bottom: 22px;
-  float: left;
-  text-align: center;
-  width: 100%;
-}
-}
-
-nav ul li {
-  display: inline-block;
-  margin-left: 11px;
-  line-height: 1.5;
-}
-
-@media only screen and (max-width: 766px) {
-
-
-
-nav ul li {
-  width: 100%;
-  padding: 7px 0;
-  margin: 0;
-}
-}
-
-nav ul a {
-  color: #888888;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.mobile-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 20px;
-  position: absolute;
-  right: 22px;
-  top: 0;
-  width: 30px;
-  -webkit-transition: all 200ms ease-in;
-  -moz-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-@media only screen and (max-width: 766px) {
-
-.mobile-toggle { display: block; }
-}
-
-
-
-
-.mobile-toggle span {
-  width: 30px;
-  height: 4px;
-  margin-bottom: 6px;
-  border-radius: 1000px;
-  background: #8f8f8f;
-  display: block;
-}
-
-.mouse {
-  display: block;
-  margin: 0 auto;
-  width: 26px;
-  height: 46px;
-  border-radius: 13px;
-  border: 2px solid #ffffff;
-  position: absolute;
-  position: absolute;
-  left: 51%;
-  margin-left: -26px;
-}
-
-.mouse span {
-  display: block;
-  margin: 6px auto;
-  width: 2px;
-  height: 2px;
-  border-radius: 4px;
-  background: #ffffff;
-  border: 1px solid transparent;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: scroll;
-  animation-name: scroll;
-}
- @-webkit-keyframes 
-scroll {  0% {
- opacity: 1;
- -webkit-transform: translateY(0);
- transform: translateY(0);
-}
- 100% {
- opacity: 0;
- -webkit-transform: translateY(20px);
- transform: translateY(20px);
-}
-}
-@keyframes 
-scroll {  0% {
- opacity: 1;
- -webkit-transform: translateY(0);
- -ms-transform: translateY(0);
- transform: translateY(0);
-}
- 100% {
- opacity: 0;
- -webkit-transform: translateY(20px);
- -ms-transform: translateY(20px);
- transform: translateY(20px);
-}
-}
-
 
 /*============== Service style ==============*/
 
@@ -1214,7 +984,7 @@ line-height: 45px !important;}
  }
 
 .contact_text h3{
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-size: 25px;
   }
 
