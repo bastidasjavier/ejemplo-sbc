@@ -2,7 +2,8 @@
 
 /**** Carousel Bootstrap Home ****/
 $('.carousel').carousel({
-   interval: 5000
+   interval: 5000,
+   pause:"hover"
   });
 
 /**** SmothScroll****/
@@ -63,5 +64,4 @@ $(document).ready(function() {
         $().UItoTop({ easingType: 'easeOutQuart' });
         
       });
-
-
+/*** ***/
