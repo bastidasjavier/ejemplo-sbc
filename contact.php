@@ -14,14 +14,11 @@ if(isset($_POST['email'])) {
     die();
     }
 
-    $data= array(
+    $data= [
          'name'=>$_POST['name'],
          'email'=>$_POST['email'],
          'message'=>$_POST['message'],
-        );
-        
-        sendMailSupport($data);
-        sendMailClient($data);
+        ];
         
         function sendMailSupport($data){
             $subject='Mensaje del formulario de contacto';
@@ -58,9 +55,10 @@ if(isset($_POST['email'])) {
                            </table>
                          </body>
                       </html>';
-            sendMail('soporte@ngncloud.com',$subject,$body)
+            sendMail('soporte@ngncloud.com',$subject,$body);
 
         }
+
 
         function sendMailClient($data){
             $subject='Mensaje recibido ';
@@ -95,9 +93,13 @@ if(isset($_POST['email'])) {
                            </table>
                          </body>
                       </html>';
-            sendMail($data['email'],$subject,$body)
+            sendMail($data['email'],$subject,$body);
         }
 
+        sendMailSupport($data);
+       sendMailClient($data);
+        
+        
     
 }
 
