@@ -1,0 +1,12 @@
+{
+    "name": "dnc",
+    "authors": [
+        {
+            "name": "Carlos David Bullones Jimenez",
+            "email": "carlos.bullones@ngncloud.net"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "~5.2"
+    }
+}
