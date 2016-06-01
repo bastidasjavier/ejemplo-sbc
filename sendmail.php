@@ -1,5 +1,6 @@
 <?php
-function sendMail($email,$subject,$body){
+function sendMail($email, $subject, $body)
+{
     $mail = new PHPMailer;
 
     //$mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -20,7 +21,7 @@ function sendMail($email,$subject,$body){
     $mail->Subject = $subject;
     $mail->Body = $body;
 
-    if(!$mail->send()) {
+    if (!$mail->send()) {
         echo 'Mensaje no se pudo enviar.';
         echo 'Hubo un error: ' . $mail->ErrorInfo;
         //var_dump($mail);
@@ -28,4 +29,5 @@ function sendMail($email,$subject,$body){
         echo 'Mensaje enviado con exito.';
     }
 }
+
 ?>

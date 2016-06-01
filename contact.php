@@ -1,28 +1,33 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require_once ('sendmail.php');
+require_once('sendmail.php');
 //use PHPMailer;
-if(isset($_POST['email'])) {
+$validateCaptcha = validateCaptcha($_POST['g-recaptcha-response']);
+
+if ($validateCaptcha) {
 
     // Aquí se deberían validar los datos ingresados por el usuario
-    if(!isset($_POST['name']) ||
-    !isset($_POST['email']) ||
-    !isset($_POST['message'])) {
+    if (isset($_POST['email']) ||
+        !isset($_POST['name']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['message'])
+    ) {
 
-    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-    die();
+        echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+        echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+        die();
     }
 
-    $data= [
-         'name'=>$_POST['name'],
-         'email'=>$_POST['email'],
-         'message'=>$_POST['message'],
-        ];
-        
-        function sendMailSupport($data){
-            $subject='Mensaje del formulario de contacto';
-            $body= '<!DOCTYPE html>
+    $data = [
+        'name' => $_POST['name'],
+        'email' => $_POST['email'],
+        'message' => $_POST['message'],
+    ];
+
+    function sendMailSupport($data)
+    {
+        $subject = 'Mensaje del formulario de contacto';
+        $body = '<!DOCTYPE html>
               <html lang="en">
               <head>
                 <meta charset="UTF-8" />
@@ -209,10 +214,10 @@ if(isset($_POST['email'])) {
                                               <h2>Detalles de correo de contacto:</h2>
                                           </div>
                                           <div class="contentEditable" align="left" >
-                                              <p><span style="font-weight: 700;">Nombre:</span>'.$data['name'].'</p>
-                                              <p><span style="font-weight: 700;">Correo:</span>'.$data['email'].'</p>
+                                              <p><span style="font-weight: 700;">Nombre:</span>' . $data['name'] . '</p>
+                                              <p><span style="font-weight: 700;">Correo:</span>' . $data['email'] . '</p>
                                               <p><span style="font-weight: 700;">Mensaje:</span></p>
-                                              <p> '.$data['message'].'
+                                              <p> ' . $data['message'] . '
                                               </p>
                                           </div>
                                         </div>
@@ -283,14 +288,15 @@ if(isset($_POST['email'])) {
               </body>
               </html>
               ';
-            sendMail('soporte@ngncloud.com',$subject,$body);
+        sendMail('soporte@ngncloud.com', $subject, $body);
 
-        }
+    }
 
 
-        function sendMailClient($data){
-            $subject='Mensaje recibido ';
-            $body= '<!DOCTYPE html>
+    function sendMailClient($data)
+    {
+        $subject = 'Mensaje recibido ';
+        $body = '<!DOCTYPE html>
                     <html lang="en">
                     <head>
                       <meta charset="UTF-8" />
@@ -474,7 +480,7 @@ if(isset($_POST['email'])) {
                                     <td width="400" align="center">
                                       <div class="contentEditableContainer contentTextEditable">
                                                 <div class="contentEditable" align="left" >
-                                                    <p >Hola '.$data['name'].',
+                                                    <p >Hola ' . $data['name'] . ',
                                                       <br/>
                                                       <br/>
                                             Gracias por contactarnos, hemos recibido tu mensaje satisfactoriamente y en la mayor brevedad posible responderemos a tu solicitud, de igual forma queremos invitarte a nuestro sitio web para que evalues los servicios que podemos ofrecer para ti...
@@ -548,14 +554,26 @@ if(isset($_POST['email'])) {
                     </body>
                     </html>
                     ';
-            sendMail($data['email'],$subject,$body);
-        }
+        sendMail($data['email'], $subject, $body);
+    }
 
-        sendMailSupport($data);
-       sendMailClient($data);
-        
-        
-    
+    sendMailSupport($data);
+    sendMailClient($data);
+
+    function validateCaptcha($captchaForm)
+    {
+        $captcha = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LdTdyETAAAAAES4d1iqh5JNq5K9L6zpRmxU0lQS&response=' . $captchaForm . '&remoteip=' . $_SERVER['REMOTE_ADDR']),
+            true);
+        if ($captcha['success'] === true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+} else {
+    echo 'Captcha Erroneo';
 }
 
 ?>
