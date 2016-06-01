@@ -1,58 +1,104 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+require_once ('sendmail.php');
 //use PHPMailer;
 if(isset($_POST['email'])) {
 
-// Aquí se deberían validar los datos ingresados por el usuario
-if(!isset($_POST['name']) ||
-!isset($_POST['email']) ||
-!isset($_POST['message'])) {
+    // Aquí se deberían validar los datos ingresados por el usuario
+    if(!isset($_POST['name']) ||
+    !isset($_POST['email']) ||
+    !isset($_POST['message'])) {
 
-echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-die();
-}
-
-$name=$_POST['name'];
-$email=$_POST['email'];
-$message=$_POST['message'];
-
-    $mail = new PHPMailer;
-
-    //$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.zoho.com';                        // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'soporte@ngncloud.com';                 // SMTP username
-    $mail->Password = 'dae1e9d168ca6609df625234baf848b4';     // SMTP password
-    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465;                                    // TCP port to connect to
-
-    $mail->setFrom('soporte@ngncloud.com', 'Mensaje del formulario de contacto');
-    $mail->addAddress('soporte@ngncloud.com', 'Mensaje del formulario de contacto');     // Add a recipient
-    //$mail->addAddress('ellen@example.com');               // Name is optional
-    $mail->addReplyTo('soporte@ngncloud.com', 'Mensaje enviado');
-    /*$mail->addCC('cc@example.com');
-    $mail->addBCC('bcc@example.com');*/
-/*
-    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name*/
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Mensaje del formulario de contacto';
-    $mail->Body = "<b>Detalles del formulario de contacto:</b>\n\n".
-    "Nombre: " . $name . "\n".
-    "E-mail: " . $email . "\n".
-    "Mensaje: " . $message . "\n\n";
-    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    if(!$mail->send()) {
-        echo 'Mensaje no se pudo enviar.';
-        //echo 'Hubo un error: ' . $mail->ErrorInfo;
-        var_dump($mail);
-    } else {
-        echo 'Mensaje enviado con exito.';
+    echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
+    echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
+    die();
     }
+
+    $data= array(
+         'name'=>$_POST['name'],
+         'email'=>$_POST['email'],
+         'message'=>$_POST['message'],
+        );
+        
+        sendMailSupport($data);
+        sendMailClient($data);
+        
+        function sendMailSupport($data){
+            $subject='Mensaje del formulario de contacto';
+            $body= '<!DOCTYPE html>
+                      <html lang="en">
+                         <head>
+                            <meta charset="UTF-8" />
+                            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                            <title>Email Contacto DNComputing</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                         </head>
+
+                         <body style="margin: 0; padding: 0;">
+                           <table align="center" border="1" cellpadding="0" cellspacing="0" width="600">
+                             <tr>
+                                <td align="center" bgcolor="#fff" style="padding: 5px 0 5px 0;">
+                                  <img src="http://i64.tinypic.com/am2nex.png" alt="Creating Email Magic" width="120" height="120" style="display: block;" />
+                                </td>
+                             </tr>
+                             <tr>
+                                <td bgcolor="#fff" style="padding: 40px 20px 30px 20px">
+                                  <h2 align="center">Detalles de correo de contacto DNComputing</h2>
+                                  <h3>Nombre:</h3>
+                                  <h3>Email:</h3>
+                                  <h3>Mensaje:</h3>
+                                </td>
+                             </tr>
+                             <tr>
+                                <td bgcolor="#fff" style="padding: 40px 20px 30px 20px">
+                                   <p>DNComputing</p>
+                                   <a href="http://dncomputing.com/" target="_blank" title="dncomputing">www.dncomputing.com</a>
+                                </td>
+                             </tr>
+                           </table>
+                         </body>
+                      </html>';
+            sendMail('soporte@ngncloud.com',$subject,$body)
+
+        }
+
+        function sendMailClient($data){
+            $subject='Mensaje recibido ';
+            $body= '<!DOCTYPE html>
+                      <html lang="en">
+                         <head>
+                            <meta charset="UTF-8" />
+                            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                            <title>Email Contacto DNComputing</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                         </head>
+
+                         <body style="margin: 0; padding: 0;">
+                           <table align="center" border="1" cellpadding="0" cellspacing="0" width="600">
+                             <tr>
+                                <td align="center" bgcolor="#fff" style="padding: 5px 0 5px 0;">
+                                  <img src="http://i64.tinypic.com/am2nex.png" alt="Creating Email Magic" width="120" height="120" style="display: block;" />
+                                </td>
+                             </tr>
+                             <tr>
+                                <td bgcolor="#fff" style="padding: 40px 20px 30px 20px">
+                                  <h2 align="center">Gracias por contactarnos</h2>
+                                  <p>A la brevedad posible le responderemos</p>
+                                </td>
+                             </tr>
+                             <tr>
+                                <td bgcolor="#fff" style="padding: 40px 20px 30px 20px">
+                                   <p>DNComputing</p>
+                                   <a href="http://dncomputing.com/" target="_blank" title="dncomputing">www.dncomputing.com</a>
+                                </td>
+                             </tr>
+                           </table>
+                         </body>
+                      </html>';
+            sendMail($data['email'],$subject,$body)
+        }
+
+    
 }
 
 ?>
