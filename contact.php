@@ -7,7 +7,7 @@ $validateCaptcha = validateCaptcha($_POST['g-recaptcha-response']);
 if ($validateCaptcha) {
 
     // Aquí se deberían validar los datos ingresados por el usuario
-    if (isset($_POST['email']) ||
+    if (
         !isset($_POST['name']) ||
         !isset($_POST['email']) ||
         !isset($_POST['message'])
@@ -24,10 +24,29 @@ if ($validateCaptcha) {
         'message' => $_POST['message'],
     ];
 
-    function sendMailSupport($data)
-    {
-        $subject = 'Mensaje del formulario de contacto';
-        $body = '<!DOCTYPE html>
+    sendMailSupport($data);
+    sendMailClient($data);
+
+
+} else {
+    echo 'Captcha Erroneo';
+}
+
+function validateCaptcha($captchaForm)
+{
+    $captcha = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LdTdyETAAAAAES4d1iqh5JNq5K9L6zpRmxU0lQS&response=' . $captchaForm . '&remoteip=' . $_SERVER['REMOTE_ADDR']),
+        true);
+    if ($captcha['success'] === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function sendMailSupport($data)
+{
+    $subject = 'Mensaje del formulario de contacto';
+    $body = '<!DOCTYPE html>
               <html lang="en">
               <head>
                 <meta charset="UTF-8" />
@@ -56,11 +75,11 @@ if ($validateCaptcha) {
                   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
 
                   h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
-                    color: red !important; 
+                    color: red !important;
                    }
 
                   h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
-                    color: purple !important; 
+                    color: purple !important;
                   }
 
                   table td {border-collapse: collapse;}
@@ -163,7 +182,7 @@ if ($validateCaptcha) {
                 <tr>
                   <td>
                   <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-                  
+
 
                   <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
                     <tr>
@@ -262,7 +281,7 @@ if ($validateCaptcha) {
                                     <br/>
                                     <span style="font-size:11px;color:#555;font-family:Helvetica, Arial, sans-serif;line-height:200%;"><a href="http://dncomputing.com/" target="_blank" title="dncomputing">www.dncomputing.com</a></span>
                                     <br/>
-                                    
+
                                           </div>
                                         </div>
                               </td>
@@ -276,11 +295,11 @@ if ($validateCaptcha) {
                     </tr>
                   </table>
 
-                  
-                  
+
+
 
                 </td></tr></table>
-                
+
                   </td>
                 </tr>
                 </table>
@@ -288,15 +307,14 @@ if ($validateCaptcha) {
               </body>
               </html>
               ';
-        sendMail('soporte@ngncloud.com', $subject, $body);
+    sendMail('soporte@ngncloud.com', $subject, $body);
 
-    }
+}
 
-
-    function sendMailClient($data)
-    {
-        $subject = 'Mensaje recibido ';
-        $body = '<!DOCTYPE html>
+function sendMailClient($data)
+{
+    $subject = 'Mensaje recibido ';
+    $body = '<!DOCTYPE html>
                     <html lang="en">
                     <head>
                       <meta charset="UTF-8" />
@@ -325,11 +343,11 @@ if ($validateCaptcha) {
                         h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
 
                         h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
-                          color: red !important; 
+                          color: red !important;
                          }
 
                         h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
-                          color: purple !important; 
+                          color: purple !important;
                         }
 
                         table td {border-collapse: collapse;}
@@ -432,7 +450,7 @@ if ($validateCaptcha) {
                       <tr>
                         <td>
                         <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-                        
+
 
                         <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" class="container">
                           <tr>
@@ -528,7 +546,7 @@ if ($validateCaptcha) {
                                           <br/>
                                           <span style="font-size:11px;color:#555;font-family:Helvetica, Arial, sans-serif;line-height:200%;"><a href="http://dncomputing.com/" target="_blank" title="dncomputing">www.dncomputing.com</a></span>
                                           <br/>
-                                          
+
                                                 </div>
                                               </div>
                                     </td>
@@ -542,11 +560,11 @@ if ($validateCaptcha) {
                           </tr>
                         </table>
 
-                        
-                        
+
+
 
                       </td></tr></table>
-                      
+
                         </td>
                       </tr>
                       </table>
@@ -554,26 +572,7 @@ if ($validateCaptcha) {
                     </body>
                     </html>
                     ';
-        sendMail($data['email'], $subject, $body);
-    }
-
-    sendMailSupport($data);
-    sendMailClient($data);
-
-    function validateCaptcha($captchaForm)
-    {
-        $captcha = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LdTdyETAAAAAES4d1iqh5JNq5K9L6zpRmxU0lQS&response=' . $captchaForm . '&remoteip=' . $_SERVER['REMOTE_ADDR']),
-            true);
-        if ($captcha['success'] === true) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-
-} else {
-    echo 'Captcha Erroneo';
+    sendMail($data['email'], $subject, $body);
 }
 
 ?>
