@@ -603,15 +603,15 @@
                         <form role="form" id="formContact" name="formContact" method="post" action="contact.php">
                             <div class="form-group">
                                 <input type="text" class="form-control form-effect" id="name" name="name"
-                                       placeholder="Nombre" required/>
+                                       placeholder="Nombre" value="<?php echo (isset($_SESSION['name'])) ? $_SESSION['name'] : '' ; ?>" required/>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control form-effect" id="email" name="email"
-                                       placeholder="Correo Electronico" required/>
+                                       placeholder="Correo Electronico" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : '' ; ?>" required/>
                             </div>
                             <div class="form-group">
                                 <textarea type="textarea" class="form-control form-effect" id="message" name="message"
-                                          placeholder="Mensaje" required></textarea>
+                                          placeholder="Mensaje" required><?php echo isset($_SESSION['message']) ? $_SESSION['message'] : '' ; ?></textarea>
                             </div>
                             <div align="center" class="form-group">
                                 <div class="g-recaptcha" data-callback="enableBtn"

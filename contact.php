@@ -34,6 +34,9 @@ if ($validateCaptcha) {
         header('Location:' . $url);
     } else {
         $_SESSION['error'] = true;
+        $_SESSION['name'] = $data['name'];
+        $_SESSION['email'] = $data['email'];
+        $_SESSION['message'] = $data['message'];
         header('Location:' . $url);
     }
 
