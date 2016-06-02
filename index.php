@@ -74,7 +74,6 @@
             <div class="hero">
                 <hgroup>
                     <h1>Somos <span>DNC</span></h1>
-                        <?php echo'prueba php'; ?>
                     <h3>Inicia tu proyecto de forma impresionante</h3>
                 </hgroup>
                 <a class="btn btn-info btn-lg" data-scroll href="#services" role="button">Ver nuestros servicios</a>
