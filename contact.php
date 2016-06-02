@@ -27,15 +27,14 @@ if ($validateCaptcha) {
 
     $respuestaSoporte = sendMailSupport($data);
     $respuestaCliente = sendMailClient($data);
+    $url = $_SERVER['HTTP_REFERER'] . '#contact';
 
     if (!$respuestaSoporte['error'] && !$respuestaCliente['error']) {
         $_SESSION['error'] = false;
-        header('Location: http://localhost/dnc#contact');
-        //header('Location: http://localhost/dnc?error=false#contact');
+        header('Location:' . $url);
     } else {
         $_SESSION['error'] = true;
-        header('Location: http://localhost/dnc#contact');
-        //header('Location: http://localhost/dnc?error=true#contact');
+        header('Location:' . $url);
     }
 
 
