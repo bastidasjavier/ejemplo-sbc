@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__ . '/vendor/autoload.php';
 require_once('sendmail.php');
 //use PHPMailer;
@@ -24,8 +25,18 @@ if ($validateCaptcha) {
         'message' => $_POST['message'],
     ];
 
-    sendMailSupport($data);
-    sendMailClient($data);
+    $respuestaSoporte = sendMailSupport($data);
+    $respuestaCliente = sendMailClient($data);
+
+    if (!$respuestaSoporte['error'] && !$respuestaCliente['error']) {
+        $_SESSION['error'] = false;
+        header('Location: http://localhost/dnc#contact');
+        //header('Location: http://localhost/dnc?error=false#contact');
+    } else {
+        $_SESSION['error'] = true;
+        header('Location: http://localhost/dnc#contact');
+        //header('Location: http://localhost/dnc?error=true#contact');
+    }
 
 
 } else {
@@ -248,17 +259,6 @@ function sendMailSupport($data)
                             <tr>
                               <td width="200">&nbsp;</td>
                               <td width="200" align="center" style="padding-top:25px;">
-                                <table cellpadding="0" cellspacing="0" border="0" align="center" width="200" height="50">
-                                  <tr>
-                                    <td bgcolor="#3498db" align="center" style="border-radius:4px;" width="200" height="50">
-                                      <div class="contentEditableContainer contentTextEditable">
-                                                <div class="contentEditable" align="center" >
-                                                    <a href="http://dncomputing.com/" target="_blank" title="dncomputing" class="link2">Ir a dncomputing</a>
-                                                </div>
-                                              </div>
-                                    </td>
-                                  </tr>
-                                </table>
                               </td>
                               <td width="200">&nbsp;</td>
                             </tr>
@@ -307,7 +307,8 @@ function sendMailSupport($data)
               </body>
               </html>
               ';
-    sendMail('soporte@ngncloud.com', $subject, $body);
+    $respuesta = sendMail('soporte@ngncloud.com', $subject, $body);
+    return $respuesta;
 
 }
 
@@ -572,7 +573,8 @@ function sendMailClient($data)
                     </body>
                     </html>
                     ';
-    sendMail($data['email'], $subject, $body);
+    $respuesta = sendMail($data['email'], $subject, $body);
+    return $respuesta;
 }
 
 ?>

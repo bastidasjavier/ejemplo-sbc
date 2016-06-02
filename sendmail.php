@@ -22,11 +22,16 @@ function sendMail($email, $subject, $body)
     $mail->Body = $body;
 
     if (!$mail->send()) {
-        echo 'Mensaje no se pudo enviar.';
-        echo 'Hubo un error: ' . $mail->ErrorInfo;
-        //var_dump($mail);
+        return [
+            'error' => $mail->ErrorInfo,
+            'estado' => false
+        ];
+
     } else {
-        echo 'Mensaje enviado con exito.';
+        return [
+            'error' => false,
+            'estado' => true
+        ];
     }
 }
 
