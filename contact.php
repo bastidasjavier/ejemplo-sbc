@@ -309,7 +309,7 @@ function sendMailSupport($data)
               </body>
               </html>
               ';
-    $respuesta = sendMail('soporte@ngncloud.com', $subject, $body);
+    $respuesta = sendMail('contacto@dncomputing.com', $subject, $body);
     return $respuesta;
 
 }
