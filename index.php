@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DNC | Venezuela</title>
-    <link rel="icon" type="image/png" href="resources/assets/img/favicon.png"/>
+    <link rel="icon" type="image/png" href="resources/assets/img/favicon-dnc.png"/>
     <!--Google web fonts-->
     <link
         href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,300italic,400italic,600,700,600italic,200,200italic'
