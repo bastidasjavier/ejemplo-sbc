@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+/*
+Custom styles web DNC
+
+Image credits: unsplash.com 
+*/
+
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 * { box-sizing: border-box; }
 
 body {
@@ -58,6 +67,7 @@ a:hover{
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -92,6 +102,8 @@ Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
 Image credits: unsplash.com
 */
 
+=======
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 /********************************/
 /*       Fade Bs-carousel       */
 /********************************/
@@ -113,6 +125,25 @@ Image credits: unsplash.com
   height: 10px;
   opacity: 1;
 }
+<<<<<<< HEAD
+=======
+/**** carousel dos client****/
+.fade-carousel2 .carousel-indicators {
+    position: relative;
+    margin-top: 20px;
+}
+.fade-carousel2 .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel2 .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 
 /********************************/
 /*          Hero Headers        */
@@ -166,7 +197,11 @@ Image credits: unsplash.com
             transition: 2s all ease-in-out .1s;    
 }
 
+<<<<<<< HEAD
 /*============== Section cdbullones  ==============*/
+=======
+/*============== Section titles ==============*/
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 .section{
   color: #000;
   text-align: center;
@@ -178,6 +213,10 @@ Image credits: unsplash.com
     font-weight: bold;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+=======
+    text-shadow: 1px 1px 3px #000000;
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 }
 .section hr{
     border: 0;
@@ -192,10 +231,16 @@ Image credits: unsplash.com
 }
 
 .section h3{
+<<<<<<< HEAD
     color: #fff;
 }
 
 
+=======
+  color: #fff;
+}
+
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 /********************************/
 /*            Overlay           */
 /********************************/
@@ -235,6 +280,7 @@ Image credits: unsplash.com
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }    
 }
+<<<<<<< HEAD
 .main_header {
   position: fixed;
   top: 0px;
@@ -456,6 +502,8 @@ scroll {  0% {
 }
 }
 
+=======
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 
 /*============== Service style ==============*/
 
@@ -536,6 +584,13 @@ scroll {  0% {
   color: #3498db;
 }
 
+<<<<<<< HEAD
+=======
+.not-border{
+  border: none;
+}
+
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 .bs-example{
   margin-top: 30px;
   margin-bottom: 65px;
@@ -612,6 +667,7 @@ scroll {  0% {
 }
 
 
+<<<<<<< HEAD
 /* ===========team style cdbullones===========*/
 .team_area img{
   width: 120px;
@@ -621,6 +677,18 @@ scroll {  0% {
 .team_section{
   margin-top: 60px;
   margin-bottom: 60px;
+=======
+/* =========== Team style ===========*/
+.team_area{
+  margin-top: 80px;
+  margin-bottom: 150px;
+}
+
+.team_section{
+  margin-top: 120px;
+  margin-bottom: 10px;
+  border: 4px solid #ddd;
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 }
 
 .team_section figure{
@@ -630,6 +698,15 @@ scroll {  0% {
     display: block;
     margin-bottom: 30px;
 }
+<<<<<<< HEAD
+=======
+
+.team_section img{
+  width: 120px;
+  border: 4px solid #ddd;
+}
+
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 .team_section h3{
     color: #000;
     font-weight: 400;
@@ -637,7 +714,11 @@ scroll {  0% {
 }
 
 .team_section span{
+<<<<<<< HEAD
     color: #b3b3b3;
+=======
+    color: #777;
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
     display: block;
     margin-bottom: 20px;
     font-size: 15px;
@@ -650,6 +731,7 @@ scroll {  0% {
     margin: 20px;
 }
 
+<<<<<<< HEAD
 /*social*/
 .social {
   padding: 0;
@@ -845,6 +927,14 @@ scroll {  0% {
   
   
 
+=======
+.team_section:hover {
+   background:rgba(221, 221, 221, 0.51);
+   box-shadow: 5px 5px 5px #888888;
+}
+
+/* =========== end Team style ===========*/
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 
 
 /* #Tablet (Portrait) */
@@ -861,6 +951,7 @@ scroll {  0% {
     width: 95%; 
   }
   
+<<<<<<< HEAD
   #portfoliolist .portfolio {
     width:48%;
     margin:1%;
@@ -870,6 +961,8 @@ scroll {  0% {
     display:none;
   }
   
+=======
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 }
 
 
@@ -879,6 +972,7 @@ scroll {  0% {
     width: 70%;
   }
   
+<<<<<<< HEAD
   #ads {
     display:none;
   }
@@ -929,10 +1023,53 @@ scroll {  0% {
 }
 
 .blog_section h1{
+=======
+}
+
+
+/*============== About style ==============*/
+
+.about_area{
+    background: url(../../../resources/assets/img/slide-grey.jpg) no-repeat center top;
+    margin-top: 0px;
+    padding-top: 40px; 
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center center;
+    min-height: 450px;
+    width: 100%;
+    background-size: cover;
+}
+
+.about-text{
+  color :#fff;
+}
+
+.about-text p{
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+/*============== Project style ==============*/
+
+.project_area{
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.project_section{
+
+}
+
+.project_section h1{
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
   text-transform: uppercase;
   font-weight: 600;
 }
 
+<<<<<<< HEAD
 .blog_section h1 span{
   color: #3498db;
 }
@@ -959,6 +1096,24 @@ color: #282a2e;
 
 }
 
+=======
+.project_section h1 span{
+  color: #3498db;
+}
+
+.single_project {
+  margin-top: 30px;
+}
+
+.single_project a{
+  text-decoration: none;
+}
+
+.single_project a:hover{
+color: #282a2e;
+}
+
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
 .slider-content {
   position: relative;
   overflow: hidden;
@@ -1024,6 +1179,7 @@ color: #282a2e;
   color:#fff;
 }
 
+<<<<<<< HEAD
 
 
 /*============== Price style ==============*/
@@ -1099,22 +1255,36 @@ line-height: 45px !important;}
 /*============== testimonial style ==============*/
 
 .testimonial_area{
+=======
+/*============== Client style ==============*/
+
+.client_area{
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
   margin-bottom: 60px;
   margin-top: 60px;
 }
 
+<<<<<<< HEAD
 .testimonial_section{
+=======
+.client_section{
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
   margin-bottom: 60px;
   margin-top: 60px;
 }
 
+<<<<<<< HEAD
 .testimonial_section h1{
+=======
+.client_section h1{
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
  text-transform: uppercase;
  font-weight: 600;
 
 }
 
 
+<<<<<<< HEAD
 .testimonial_section h1 span{
   color: #3498db;
 }
@@ -1303,3 +1473,199 @@ line-height: 45px !important;}
     border-radius: 30px;
 }
 /*============== End Carousel style clients ==============*/
+=======
+.client_section h1 span{
+  color: #3498db;
+}
+
+/*============== Contact style ==============*/
+
+.contact_area{
+  margin-bottom: 100px;
+  margin-top: 80px;
+}
+
+.contact-form {
+    margin-top: 30px;
+}
+
+.address-space {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 80px;
+}
+.address-space p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.social-space {
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.form-effect {
+    padding: 12px 12px;
+    background-color: rgba(33, 42, 63, 0.2);
+    color: #212A3F;
+    height: auto !important;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-sub {
+    color: #fff;
+    background-color: #03A9F4;
+    border-color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+}
+
+.copyright_section{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+}
+
+/*============== Buttons social ==============*/
+.social {
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.social li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+.social li a {
+  font-size: 16px;
+  display: table;
+  width: 40px;
+  height: 40px;
+  margin: 0 4px;
+}
+.social li a i {
+  display: table-cell;
+  vertical-align: middle;
+}
+.social li a:hover, .social li a:active, .social li a:focus {
+  text-decoration: none;
+  border-bottom: none;
+}
+.social li a.social-box {
+  background: #03A9F4;
+  color: #fff;
+}
+.social li a.social-circle {
+  background: #03A9F4;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.social li a:hover {
+  background: #393e46 !important;
+}
+.social.social-box a {
+  background: #03A9F4;
+  color: #fff;
+}
+.social.social-circle a {
+  background: #03A9F4;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/*Media Query Menu*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+  /*===== section Contact =====*/
+  .form-effect {
+    padding: 45px 22px;
+    background-color: rgba(33, 42, 63, 0.2);
+    color: #212A3F;
+    height: auto !important;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+  }
+  .btn-sub {
+    font-size: 30px;
+    padding: 20px 60px;
+  }
+
+  .address-space {
+    padding-left: 10px;
+    line-height: 2;
+  }
+  .address-space p{
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .social-space h3{
+    font-size: 30px;
+  }
+  .social li a {
+    width: 80px;
+    height: 80px;
+  }
+  .social li a i {
+    font-size: 30px;
+  }
+  .copyright_section {
+    font-size: xx-large;
+  }
+
+}
+
+/* Tablet (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  /*===== section Contact =====*/
+  .form-effect {
+    padding: 45px 22px;
+    background-color: rgba(33, 42, 63, 0.2);
+    color: #212A3F;
+    height: auto !important;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+  }
+  .btn-sub {
+    font-size: 30px;
+    padding: 20px 60px;
+  }
+
+  .address-space {
+    padding-left: 10px;
+    line-height: 2;
+  }
+  .address-space p{
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .social-space h3{
+    font-size: 30px;
+  }
+  .social li a {
+    width: 80px;
+    height: 80px;
+  }
+  .social li a i {
+    font-size: 30px;
+  }
+  .copyright_section {
+    font-size: xx-large;
+  }
+}
+
+/****/
+>>>>>>> 18fcbbf014b340c6ba0d026053b3ce7af99bfe3f
